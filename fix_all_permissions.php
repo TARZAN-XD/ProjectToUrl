@@ -1,37 +1,42 @@
 <?php
+/**
+ * 🔧 سكربت تصحيح صلاحيات الملفات والمجلدات
+ * 🛡️ لحل مشاكل الصلاحيات (403 / 404)
+ * ✍️ © 2025 طرزان الواقدي
+ * 
+ * المجلدات = 755 | الملفات = 644
+ */
 
-// Fungsi Auto Folder : 755 , File : 644 
-// Di Gunakan Jika Alses Denied 404 Permission
-// Run? sesuai kan domain lu https://vanzhosting.my.id/fix_all_permissions.php
-
+// دالة لضبط صلاحيات الملفات والمجلدات
 function fixPermissions($dir) {
-$rii = new RecursiveIteratorIterator(
-new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
-RecursiveIteratorIterator::SELF_FIRST
-);
+    $rii = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::SELF_FIRST
+    );
 
-foreach ($rii as $file) {
-$path = $file->getPathname();
+    foreach ($rii as $file) {
+        $path = $file->getPathname();
 
-if ($file->isDir()) {
-chmod($path, 0755); // Folder
-} elseif ($file->isFile()) {
-chmod($path, 0644); // File
+        if ($file->isDir()) {
+            chmod($path, 0755); // صلاحيات المجلد
+        } elseif ($file->isFile()) {
+            chmod($path, 0644); // صلاحيات الملف
+        }
+    }
+
+    // ضبط صلاحيات المجلد الرئيسي
+    chmod($dir, 0755);
 }
-}
 
-// Ubah juga root folder 
-chmod($dir, 0755);
-}
-
-// Ganti Sesuai Folder Yang Mau Diubah 
-$targets = ['X', __DIR__]; // folder X,  dan root
+// 🔁 المجلدات المطلوب تصحيح صلاحياتها
+$targets = ['X', __DIR__]; // مجلد X والمجلد الرئيسي للمشروع
 
 foreach ($targets as $folder) {
-$path = is_dir($folder) ? realpath($folder) : $folder;
-if ($path) {
-fixPermissions($path);
-}
+    $path = is_dir($folder) ? realpath($folder) : $folder;
+    if ($path) {
+        fixPermissions($path);
+    }
 }
 
-echo "✅ Semua Permission Berhasil Di Set.";
+echo "✅ تم تصحيح جميع صلاحيات الملفات والمجلدات بنجاح.";
+?>
