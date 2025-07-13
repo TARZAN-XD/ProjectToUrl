@@ -1,36 +1,45 @@
-# 🚫 Please Don't Delete Credits!
-
-**Developer** : Vanz Ryuichi  
-**Number** : +6288276746473  
-**My Channel** : [WhatsApp Channel](https://whatsapp.com/channel/0029VamHr3F8aKvTU8dBdT43)
-
----
-
-## 📁 Panduan & Penggunaan
-
-- 🎥 **Video Tutor Upload ke Hosting** ada di folder `./Tutor`
-- ⚠️ Jika Mengalami **403 Forbidden**, kunjungi:  
-  [https://vanzhosting.my.id/fix_all_permissions.php](https://vanzhosting.my.id/fix_all_permissions.php)  
-  _(*Sesuai kan dengan domain Anda)_
+# 💀🚫 نظام محمي بقوة – ممنوع التطفل!
+> ⚠️ هذا النظام محمي بواسطة **طرزان الواقدي**  
+> ❌ تم ربط النظام بجدران نارية عالية الحماية  
+> 🛡️ لا تحاول العبث، جميع الأنشطة مسجلة!
 
 ---
 
-### 🔧 Cara Penggunaan:
+## 👑 المطوّر:
 
-- **Apikey** terletak di `settings.php`
-
-| Fitur         | Link                                                                 |
-|---------------|----------------------------------------------------------------------|
-| Upload        | `https://vanzhosting.my.id/upload.php`  _(Sesuai kan dengan domain)_ |
-| List File     | `https://vanzhosting.my.id/list.php?apikey=` _(Sesuai kan domain)_   |
-| Delete File   | `https://vanzhosting.my.id/delete.php?apikey=` _(Sesuai kan domain)_ |
+- 👨‍💻 الاسم: **طرزان الواقدي**
+- 📱 الرقم: `+966XXXXXXXX`
+- 📢 القناة: [@tarzan_waqdi_channel](https://t.me/tarzan_waqdi_channel)
 
 ---
 
-## ℹ️ Hanya Memberi Tahu 😶
+## 🧠 دليل الاستخدام:
 
-**Hosting Murah 5K?**  
-👉 [https://anymhost.id/](https://anymhost.id/)
+| العملية         | الرابط                                                               |
+|------------------|----------------------------------------------------------------------|
+| 🔐 مفتاح API     | موجود في ملف `settings.php`                                           |
+| 📤 رفع الملفات   | `https://yourdomain.com/upload.php`                                  |
+| 📄 عرض الملفات   | `https://yourdomain.com/list.php?apikey=XXX`                         |
+| 🗑️ حذف الملفات   | `https://yourdomain.com/delete.php?apikey=XXX&file=filename.ext`     |
 
-> Pilih **Cheap Hosting** sesuai harga.  
-> Domain **transfer aja**, jangan beli lagi bagi yang sudah punya domain 😶
+---
+
+## 🚨 تحذير أمني عالي المستوى:
+
+> أي محاولة اختراق أو تعديل غير مصرح بها ستؤدي إلى **حظر دائم** وتتبع الموقع الجغرافي  
+> ⚡ النظام مراقب من قبل **طرزان الواقدي**
+
+---
+
+## 🌐 استضافة موصى بها:
+
+- 🔥 [https://anymhost.id/](https://anymhost.id/) – أفضل استضافة بسعر 5K فقط!
+
+---
+
+## 👁️‍🗨️ تذكير:
+
+```txt
+🛡️ هذا المشروع مملوك لـ طرزان الواقدي  
+❌ لا تحذف الحقوق، احترم تعب المبرمجين  
+© 2025 Tarzan Alwaqdi. All Rights Reserved. 
