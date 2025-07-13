@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>API Uploader Dashboard</title>
+  <title>لوحة رفع الملفات - طرزان الواقدي</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
@@ -23,8 +23,8 @@
     header {
       position: fixed;
       top: 0;
-      left: 0;
       right: 0;
+      left: 0;
       height: 60px;
       background: #1a1a1a;
       display: flex;
@@ -43,7 +43,7 @@
     .menu-toggle {
       font-size: 24px;
       cursor: pointer;
-      display: none;
+      display: block;
       color: #00ffc3;
     }
 
@@ -57,14 +57,14 @@
       position: fixed;
       top: 60px;
       bottom: 0;
-      left: 0;
-      box-shadow: 2px 0 10px rgba(0, 255, 195, 0.1);
+      right: 0;
+      box-shadow: -2px 0 10px rgba(0, 255, 195, 0.1);
       z-index: 100;
       transition: transform 0.3s ease;
     }
 
     .sidebar.closed {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
 
     .sidebar img {
@@ -119,7 +119,7 @@
       justify-content: space-between;
       flex: 1;
       min-height: 100vh;
-      margin-left: 260px;
+      margin-right: 0;
       padding-top: 60px;
     }
 
@@ -132,7 +132,7 @@
     }
 
     .main h2 {
-      font-size: 2.8em;
+      font-size: 2.5em;
       color: #00ffc3;
       margin-bottom: 20px;
     }
@@ -195,50 +195,47 @@
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
       .sidebar {
         top: 60px;
         height: calc(100% - 60px);
       }
 
       .main-container {
-        margin-left: 0;
+        margin-right: 0;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>📋 API Uploader Dashboard</h1>
+    <h1>📋 لوحة التحكم لرفع الملفات</h1>
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
   </header>
 
-  <div class="sidebar" id="sidebar">
-    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profil Developer" />
-    <h2>Vanzz Ryuichi</h2>
-    <p>Web API Developer</p>
+  <!-- ✅ القائمة الجانبية تبدأ مغلقة -->
+  <div class="sidebar closed" id="sidebar">
+    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="صورة المطور" />
+    <h2>طرزان الواقدي</h2>
+    <p>مبرمج ومطور واجهات</p>
     <div class="nav-links">
-      <a href="https://www.vanzhosting.my.id" target="_blank">📚 Dokumentasi</a>
-      <a href="https://github.com/Vanxzofc" target="_blank">💻 GitHub</a>
-      <a href="https://wa.me//6288276746473">📬 Kontak</a>
-      <a href="https://whatsapp.com/channel/0029VamHr3F8aKvTU8dBdT43" target="_blank">🪀 My Channel</a>
+      <a href="#">📚 التوثيق</a>
+      <a href="https://github.com/tarzan-waqdi" target="_blank">💻 GitHub</a>
+      <a href="https://wa.me/966000000000">📬 واتساب</a>
+      <a href="https://t.me/tarzan_waqdi_channel" target="_blank">🪀 قناة تيليجرام</a>
     </div>
   </div>
 
   <div class="main-container">
     <div class="main">
-      <h2>📤 API Uploader</h2>
-      <p>Upload file ke <strong>vanzhosting.my.id</strong> untuk <strong>gambar, mp3, dan video</strong>.</p>
+      <h2>📤 أداة رفع الملفات</h2>
+      <p>قم برفع ملفات الصور أو الصوت أو الفيديو إلى سيرفر طرزان الواقدي مباشرة.</p>
       <form class="upload-form" id="uploadForm">
         <input type="file" name="file" id="fileInput" accept="image/*,audio/*,video/*" required />
-        <button type="submit">Unggah Sekarang</button>
+        <button type="submit">ارفع الآن</button>
       </form>
       <div id="uploadStatus"></div>
     </div>
-    <footer>© 2025 Vanzz Ryuichi • All Rights Reserved</footer>
+    <footer>© 2025 طرزان الواقدي • جميع الحقوق محفوظة</footer>
   </div>
 
   <script>
@@ -259,7 +256,7 @@
       const formData = new FormData();
       formData.append('file', file);
 
-      statusDiv.innerHTML = '⏳ Mengunggah...';
+      statusDiv.innerHTML = '⏳ جاري رفع الملف...';
 
       try {
         const response = await fetch('upload.php', {
@@ -268,12 +265,12 @@
         });
         const result = await response.text();
         if (response.ok && result.includes('http')) {
-          statusDiv.innerHTML = `✅ <span style='color:#00ffc3'>Berhasil:</span><br><a href="${result}" target="_blank" style="color:#00ffc3;word-break:break-all">${result}</a>`;
+          statusDiv.innerHTML = `✅ <span style='color:#00ffc3'>تم الرفع بنجاح:</span><br><a href="${result}" target="_blank" style="color:#00ffc3;word-break:break-all">${result}</a>`;
         } else {
-          statusDiv.innerHTML = '❌ Gagal Upload: ' + result;
+          statusDiv.innerHTML = '❌ فشل في رفع الملف: ' + result;
         }
       } catch (err) {
-        statusDiv.innerHTML = '🚫 Terjadi Kesalahan: ' + err.message;
+        statusDiv.innerHTML = '🚫 حدث خطأ: ' + err.message;
       }
     });
   </script>
